@@ -1,5 +1,4 @@
 import requests
-import asyncio
 
 ENDPOINT = "https://www.fast2sms.com/dev/bulkV2"
 API_KEY = "yvQzOrxVlRi5u1NkKjHD4owgp2SZYA9sfch3BFnbt0LeqJUda88dbCc4psDgJLBvPMSiV53n9Wj2aKNG"
