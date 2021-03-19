@@ -78,10 +78,10 @@ class AttendenceDataAdmin(admin.ModelAdmin):
     def school_name(self,obj):
         return str(obj.student.school.name)
 
-    def class_name(Self,obj):
+    def class_name(self,obj):
         return str(obj.student.classno)
 
-    def roll_no(Self,obj):
+    def roll_no(self,obj):
         return str(obj.student.rollno)
 
     def mobile_number(self,obj):
