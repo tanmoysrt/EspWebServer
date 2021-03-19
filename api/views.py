@@ -21,4 +21,4 @@ def verifyMaskAndGiveAttendence(request):
     except Exception as e:
         print(str(e))
     
-    return HttpResponse(f"Failed {card_idd} {api_key}")
+    return HttpResponse(f"FAILED")
