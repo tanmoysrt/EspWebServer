@@ -17,7 +17,7 @@ def verifyMaskAndGiveAttendence(request):
             )
             name =  student.name
             log.save()
-            return HttpResponse(f"{name[:6]} SUCCESS ")
+            return HttpResponse(f"{str(name[:6]).upper()} SUCCESS ")
     except Exception as e:
         print(str(e))
     
