@@ -17,7 +17,7 @@ def verifyMaskAndGiveAttendence(request):
             )
             name =  student.name
             log.save()
-            return HttpResponse(f"{str(name[:6]).upper()} SUCCESS ")
+            return HttpResponse(f"{str(name[:6]).upper()} - {str(student.rollno)}")
     except Exception as e:
         print(str(e))
     
