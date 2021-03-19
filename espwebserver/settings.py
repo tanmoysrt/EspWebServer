@@ -128,6 +128,6 @@ TIME_ZONE = 'Asia/Kolkata'
 
 
 CRONJOBS = [
-    ('*/1 * * * *', 'api.cron.check_come'),
-    ('*/1 * * * *','api.cron.may_escape')
+    ('30 10 * * *', 'api.cron.check_come'),
+    ('30 16 * * *','api.cron.may_escape')
 ]
