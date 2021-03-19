@@ -45,14 +45,6 @@ class AttendenceData(models.Model):
     school_left_unofficially = models.BooleanField(null=True,default=False)
     status = models.CharField(max_length=20,choices=(("inschool","Currently In School"),("left","Left The School")),default="inschool")
 
-class Logs(models.Model):
-    student = models.ForeignKey(StudentsData,on_delete=models.CASCADE)
-    message = models.TextField(null=True,default="")
-    created_At = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return str(self.student.name)
-
 
 @admin.register(SchoolRegistration)
 class SchoolRegistrationAdmin(admin.ModelAdmin):
@@ -83,13 +75,6 @@ class AttendenceDataAdmin(admin.ModelAdmin):
 
     def roll_no(self,obj):
         return str(obj.student.rollno)
-
-    def mobile_number(self,obj):
-        return str(obj.student.guardian_phone_no)
-
-@admin.register(Logs)
-class LogsData(admin.ModelAdmin):
-    list_display=("student","message","created_At","mobile_number")
 
     def mobile_number(self,obj):
         return str(obj.student.guardian_phone_no)

@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_crontab',
     'api.apps.ApiConfig'
 ]
 
@@ -123,3 +124,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR,"static")
 AUTH_USER_MODEL = 'api.SchoolRegistration'
+TIME_ZONE = 'Asia/Kolkata'
+
+
+CRONJOBS = [
+    ('*/1 * * * *', 'api.cron.check_come'),
+    ('*/1 * * * *','api.cron.may_escape')
+]

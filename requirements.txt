@@ -2,3 +2,4 @@ Django
 gunicorn
 whitenoise
 requests
+django-crontab
