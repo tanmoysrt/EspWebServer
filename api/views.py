@@ -35,14 +35,14 @@ def verifyMaskAndGiveAttendence(request):
                     student = student,
                 )
                 log.save()
-                sendSms(guardian_phone_no,SCHOOL_REACHED.format(str(timezone.now().time())))
+                sendSms(guardian_phone_no,SCHOOL_REACHED.format(str(datetime.datetime.now().time())))
             else :
                 log = attendencelog[0]
                 print("Hitted")
-                log.exit_Time = timezone.now().time()
+                log.exit_Time = datetime.datetime.now().time()
                 log.status = "left"
                 log.save()
-                sendSms(guardian_phone_no,SCHOOL_LEFT.format(str(timezone.now().time())))
+                sendSms(guardian_phone_no,SCHOOL_LEFT.format(str(datetime.datetime.now().time())))
 
             return HttpResponse(f"{str(name[:6]).upper()} Roll - {str(student.rollno)}")
     except Exception as e:
