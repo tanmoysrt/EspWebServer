@@ -3,3 +3,4 @@ gunicorn
 whitenoise
 requests
 django-crontab
+django-import-export
